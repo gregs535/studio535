@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies | Studio 535</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<style>
+  .gradient-text { background: linear-gradient(90deg, #00d4ff, #7c3aed); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+</style>
+</head>
+<body class="bg-gray-950 text-white font-sans antialiased">
+
+<!-- Nav -->
+<nav class="fixed top-0 w-full bg-gray-950/80 backdrop-blur-md border-b border-gray-800 z-50">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="/" class="text-xl font-bold">Studio 535</a>
+    <div class="flex gap-6">
+      <a href="/" class="text-gray-400 hover:text-white transition">Home</a>
+      <a href="/products.html" class="text-gray-400 hover:text-white transition">Products</a>
+      <a href="/case-studies.html" class="text-cyan-400">Case Studies</a>
+      <a href="/blog.html" class="text-gray-400 hover:text-white transition">Blog</a>
+      <a href="/about.html" class="text-gray-400 hover:text-white transition">About</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-32 pb-16 px-6 text-center">
+  <p class="text-cyan-400 text-sm tracking-widest mb-4">CASE STUDIES</p>
+  <h1 class="text-5xl font-bold mb-6">Real systems. <span class="gradient-text">Real results.</span></h1>
+  <p class="text-gray-400 text-xl max-w-2xl mx-auto">Documented transformations from chaos to coordinated AI infrastructure.</p>
+</section>
+
+<!-- Main Case Study -->
+<section class="py-16 px-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="glass rounded-2xl p-8 mb-12">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center text-3xl">🖥️</div>
+        <div>
+          <p class="text-cyan-400 text-sm">FEATURED CASE STUDY</p>
+          <h2 class="text-2xl font-bold">The 7-Machine Fleet Transformation</h2>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="text-center p-6 bg-gray-900 rounded-xl">
+          <p class="text-4xl font-bold text-red-400 mb-2">60%</p>
+          <p class="text-gray-500 text-sm">Uptime Before</p>
+        </div>
+        <div class="text-center p-6 bg-gray-900 rounded-xl">
+          <p class="text-4xl font-bold text-cyan-400 mb-2">99%+</p>
+          <p class="text-gray-500 text-sm">Uptime After</p>
+        </div>
+        <div class="text-center p-6 bg-gray-900 rounded-xl">
+          <p class="text-4xl font-bold text-green-400 mb-2">20+</p>
+          <p class="text-gray-500 text-sm">Hours Saved Weekly</p>
+        </div>
+      </div>
+
+      <h3 class="text-xl font-bold mb-4">The Problem</h3>
+      <p class="text-gray-400 mb-6">Seven machines running AI workloads with zero coordination. Mac Minis, Ubuntu servers, Windows workstations — all speaking different languages. Manual file transfers. No unified memory. Constant context switching.</p>
+
+      <h3 class="text-xl font-bold mb-4">The Solution</h3>
+      <ul class="space-y-3 text-gray-400 mb-6">
+        <li class="flex gap-3"><span class="text-cyan-400">✓</span> Unified Tailscale mesh network connecting all machines</li>
+        <li class="flex gap-3"><span class="text-cyan-400">✓</span> Hermes Agent orchestration layer for task distribution</li>
+        <li class="flex gap-3"><span class="text-cyan-400">✓</span> Shared Obsidian vault as canonical knowledge base</li>
+        <li class="flex gap-3"><span class="text-cyan-400">✓</span> Automated cron jobs for monitoring, reporting, and maintenance</li>
+        <li class="flex gap-3"><span class="text-cyan-400">✓</span> Write-through architecture ensuring single source of truth</li>
+      </ul>
+
+      <h3 class="text-xl font-bold mb-4">The Results</h3>
+      <div class="grid md:grid-cols-2 gap-4 mb-6">
+        <div class="p-4 bg-gray-900 rounded-lg">
+          <p class="text-cyan-400 font-semibold">Knowledge Retrieval</p>
+          <p class="text-gray-400 text-sm">5-10 minutes → Under 1 second</p>
+        </div>
+        <div class="p-4 bg-gray-900 rounded-lg">
+          <p class="text-cyan-400 font-semibold">File Sync</p>
+          <p class="text-gray-400 text-sm">Manual → Automatic (24/7)</p>
+        </div>
+        <div class="p-4 bg-gray-900 rounded-lg">
+          <p class="text-cyan-400 font-semibold">Agent Coordination</p>
+          <p class="text-gray-400 text-sm">Isolated → Unified fleet</p>
+        </div>
+        <div class="p-4 bg-gray-900 rounded-lg">
+          <p class="text-cyan-400 font-semibold">Revenue Operations</p>
+          <p class="text-gray-400 text-sm">Ad-hoc → Systematic launches</p>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-6">
+        <p class="text-gray-500 text-sm italic">"This same infrastructure now powers Studio 535. Every product, every automation, every client deliverable runs on this stack."</p>
+      </div>
+    </div>
+
+    <!-- Additional Case Studies Grid -->
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="glass rounded-xl p-6">
+        <div class="text-3xl mb-4">📊</div>
+        <h3 class="text-xl font-bold mb-2">Content Production Pipeline</h3>
+        <p class="text-gray-400 text-sm mb-4">Automated blog, social, and newsletter generation from a single knowledge base.</p>
+        <div class="flex gap-4 text-sm">
+          <span class="text-cyan-400">12x output</span>
+          <span class="text-gray-500">90% time saved</span>
+        </div>
+      </div>
+
+      <div class="glass rounded-xl p-6">
+        <div class="text-3xl mb-4">🎯</div>
+        <h3 class="text-xl font-bold mb-2">Lead Generation System</h3>
+        <p class="text-gray-400 text-sm mb-4">508 local business leads scored, prioritized, and queued for outreach automatically.</p>
+        <div class="flex gap-4 text-sm">
+          <span class="text-cyan-400">508 leads</span>
+          <span class="text-gray-500">22 hot prospects</span>
+        </div>
+      </div>
+
+      <div class="glass rounded-xl p-6">
+        <div class="text-3xl mb-4">⚡</div>
+        <h3 class="text-xl font-bold mb-2">Product Launch Machine</h3>
+        <p class="text-gray-400 text-sm mb-4">From idea to live product in under 24 hours. 16 products built and ready.</p>
+        <div class="flex gap-4 text-sm">
+          <span class="text-cyan-400">16 products</span>
+          <span class="text-gray-500">$2K+ potential</span>
+        </div>
+      </div>
+
+      <div class="glass rounded-xl p-6">
+        <div class="text-3xl mb-4">🔧</div>
+        <h3 class="text-xl font-bold mb-2">Self-Healing Infrastructure</h3>
+        <p class="text-gray-400 text-sm mb-4">Automated monitoring, alerting, and recovery across the entire fleet.</p>
+        <div class="flex gap-4 text-sm">
+          <span class="text-cyan-400">24/7 monitoring</span>
+          <span class="text-gray-500">Zero downtime</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 px-6 text-center">
+  <h2 class="text-3xl font-bold mb-6">Want results like these?</h2>
+  <p class="text-gray-400 mb-8">Book a discovery call. I'll show you exactly how this applies to your business.</p>
+  <a href="https://calendly.com/studio535/discovery" class="px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded-lg transition inline-block">Book Discovery Call</a>
+</section>
+
+<!-- Footer -->
+<footer class="py-12 px-6 border-t border-gray-800 text-center text-gray-600 text-sm">
+  <p>Studio 535 · AI Consulting & Digital Products · est. 2026</p>
+</footer>
+
+</body>
+</html>

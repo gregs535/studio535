@@ -5,9 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Products | Studio 535</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<!-- Stripe.js -->
+<script src="https://js.stripe.com/v3/"></script>
 <style>
   .gradient-text { background: linear-gradient(90deg, #00d4ff, #7c3aed); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+  .tier-badge { position: absolute; top: -12px; right: 20px; }
 </style>
 </head>
 <body class="bg-gray-950 text-white font-sans antialiased">
@@ -19,135 +30,290 @@
     <div class="flex gap-6">
       <a href="/" class="text-gray-400 hover:text-white transition">Home</a>
       <a href="/products.html" class="text-cyan-400">Products</a>
-      <a href="/#contact" class="text-gray-400 hover:text-white transition">Contact</a>
+      <a href="/case-studies.html" class="text-gray-400 hover:text-white transition">Case Studies</a>
+      <a href="/blog.html" class="text-gray-400 hover:text-white transition">Blog</a>
+      <a href="/about.html" class="text-gray-400 hover:text-white transition">About</a>
     </div>
   </div>
 </nav>
 
 <!-- Hero -->
 <section class="pt-32 pb-16 px-6 text-center">
-  <h1 class="text-5xl font-bold mb-6">Digital <span class="gradient-text">Products</span></h1>
-  <p class="text-gray-400 text-xl max-w-2xl mx-auto">Instant downloads. Battle-tested systems. Built by someone who actually uses them daily.</p>
+  <p class="text-cyan-400 text-sm tracking-widest mb-4">DIGITAL PRODUCTS</p>
+  <h1 class="text-5xl font-bold mb-6">Battle-tested systems. <span class="gradient-text">Instant download.</span></h1>
+  <p class="text-gray-400 text-xl max-w-2xl mx-auto">Every product built from daily production use. No theory, just what works.</p>
+</section>
+
+<!-- Featured Bundle -->
+<section class="py-8 px-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="glass rounded-2xl p-8 border-2 border-cyan-500/50 relative">
+      <div class="tier-badge bg-cyan-500 text-black text-sm px-4 py-1 rounded-full font-bold">BEST VALUE — SAVE $40</div>
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <p class="text-cyan-400 text-sm mb-2">COMPLETE BUNDLE</p>
+          <h2 class="text-3xl font-bold mb-4">Maker Business Full Stack</h2>
+          <p class="text-gray-400 mb-6">All 4 premium products. Everything you need to run an AI-powered maker business.</p>
+          <ul class="space-y-2 text-gray-400 mb-6">
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> AI Product Photography Playbook</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Maker Business AI Automation Kit</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Maker Business Notion OS</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> AI Prompt Engineering for Makers</li>
+          </ul>
+        </div>
+        <div class="text-center">
+          <p class="text-gray-500 line-through text-xl">$151</p>
+          <p class="text-5xl font-bold text-cyan-400 mb-4">$111</p>
+          <button onclick="buyBundle()" class="w-full px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-bold rounded-lg text-lg transition mb-4">Buy Bundle — $111</button>
+          <p class="text-gray-500 text-sm">Instant download · 30-day guarantee</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Products Grid -->
 <section class="py-16 px-6">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-12">Individual Products</h2>
     
-    <!-- Product 1 -->
-    <div class="glass rounded-2xl overflow-hidden">
-      <div class="h-48 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center">
-        <span class="text-6xl">💇</span>
-      </div>
-      <div class="p-6">
-        <p class="text-cyan-400 text-sm mb-2">PROMPT PACK</p>
-        <h3 class="text-xl font-bold mb-2">AI Prompts for Estheticians</h3>
-        <p class="text-gray-400 text-sm mb-4">50+ ready-to-use prompts for client communication, booking, social media, and business operations.</p>
-        <div class="flex justify-between items-center">
-          <span class="text-2xl font-bold">$14.99</span>
-          <a href="https://gumroad.com/l/ai-prompt-estheticians" class="px-4 py-2 bg-cyan-500 text-black font-semibold rounded-lg hover:bg-cyan-400 transition">Buy Now</a>
+    <div class="grid md:grid-cols-2 gap-8">
+      
+      <!-- Product 1: AI Product Photography -->
+      <div class="glass rounded-2xl overflow-hidden">
+        <div class="h-48 bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
+          <span class="text-6xl">📸</span>
         </div>
-      </div>
-    </div>
-
-    <!-- Product 2 -->
-    <div class="glass rounded-2xl overflow-hidden">
-      <div class="h-48 bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center">
-        <span class="text-6xl">🧠</span>
-      </div>
-      <div class="p-6">
-        <p class="text-cyan-400 text-sm mb-2">PRODUCTIVITY</p>
-        <h3 class="text-xl font-bold mb-2">Brain Dump to Done</h3>
-        <p class="text-gray-400 text-sm mb-4">The ADHD-friendly productivity system. Turn mental chaos into organized action.</p>
-        <div class="flex justify-between items-center">
-          <span class="text-2xl font-bold">$12.99</span>
-          <a href="https://gumroad.com/l/brain-dump-to-done" class="px-4 py-2 bg-cyan-500 text-black font-semibold rounded-lg hover:bg-cyan-400 transition">Buy Now</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Product 3 -->
-    <div class="glass rounded-2xl overflow-hidden">
-      <div class="h-48 bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center">
-        <span class="text-6xl">🔥</span>
-      </div>
-      <div class="p-6">
-        <p class="text-cyan-400 text-sm mb-2">BUSINESS KIT</p>
-        <h3 class="text-xl font-bold mb-2">Laser Engraving Starter Kit</h3>
-        <p class="text-gray-400 text-sm mb-4">Complete business-in-a-box: templates, pricing guides, client contracts, and production sheets.</p>
-        <div class="flex justify-between items-center">
-          <span class="text-2xl font-bold">$24.99</span>
-          <a href="https://gumroad.com/l/laser-business-kit" class="px-4 py-2 bg-cyan-500 text-black font-semibold rounded-lg hover:bg-cyan-400 transition">Buy Now</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Product 4 -->
-    <div class="glass rounded-2xl overflow-hidden">
-      <div class="h-48 bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
-        <span class="text-6xl">📋</span>
-      </div>
-      <div class="p-6">
-        <p class="text-cyan-400 text-sm mb-2">NOTION TEMPLATE</p>
-        <h3 class="text-xl font-bold mb-2">Notion Esthetician OS</h3>
-        <p class="text-gray-400 text-sm mb-4">Complete business management system. Clients, bookings, inventory, and finances in one place.</p>
-        <div class="flex justify-between items-center">
-          <span class="text-2xl font-bold">$19.99</span>
-          <a href="https://gumroad.com/l/notion-esthetician-os" class="px-4 py-2 bg-cyan-500 text-black font-semibold rounded-lg hover:bg-cyan-400 transition">Buy Now</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Product 5 -->
-    <div class="glass rounded-2xl overflow-hidden">
-      <div class="h-48 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 flex items-center justify-center">
-        <span class="text-6xl">💼</span>
-      </div>
-      <div class="p-6">
-        <p class="text-cyan-400 text-sm mb-2">FREELANCER PACK</p>
-        <h3 class="text-xl font-bold mb-2">AI Prompts for Freelancers</h3>
-        <p class="text-gray-400 text-sm mb-4">50+ prompts for proposals, client communication, project management, and getting paid.</p>
-        <div class="flex justify-between items-center">
-          <span class="text-2xl font-bold">$14.99</span>
-          <a href="https://gumroad.com/l/ai-prompt-freelancers" class="px-4 py-2 bg-cyan-500 text-black font-semibold rounded-lg hover:bg-cyan-400 transition">Buy Now</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bundle -->
-    <div class="glass rounded-2xl overflow-hidden border-2 border-cyan-500/50 relative">
-      <div class="absolute top-4 right-4 bg-cyan-500 text-black text-xs px-2 py-1 rounded font-bold">SAVE 30%</div>
-      <div class="h-48 bg-gradient-to-br from-cyan-500/30 to-purple-500/30 flex items-center justify-center">
-        <span class="text-6xl">🎁</span>
-      </div>
-      <div class="p-6">
-        <p class="text-cyan-400 text-sm mb-2">BUNDLE</p>
-        <h3 class="text-xl font-bold mb-2">Complete Collection</h3>
-        <p class="text-gray-400 text-sm mb-4">All 5 products. Everything you need to run an AI-powered business.</p>
-        <div class="flex justify-between items-center">
-          <div>
-            <span class="text-gray-500 line-through text-sm">$87.95</span>
-            <span class="text-2xl font-bold ml-2">$49.99</span>
+        <div class="p-6">
+          <p class="text-cyan-400 text-sm mb-2">PHOTOGRAPHY + AI</p>
+          <h3 class="text-2xl font-bold mb-2">AI Product Photography Playbook</h3>
+          <p class="text-gray-400 text-sm mb-4">225 prompts, 3 scripts, 4 guides. Professional product photos without a photographer.</p>
+          
+          <!-- Tier Selection -->
+          <div class="space-y-3 mb-6">
+            <label class="flex items-center gap-3 p-3 bg-gray-900 rounded-lg cursor-pointer hover:bg-gray-800 transition">
+              <input type="radio" name="photo-tier" value="27" class="text-cyan-500" checked>
+              <div class="flex-1">
+                <p class="font-semibold">Basic</p>
+                <p class="text-gray-500 text-sm">225 prompts + PDF guide</p>
+              </div>
+              <span class="font-bold">$27</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 bg-gray-900 rounded-lg cursor-pointer hover:bg-gray-800 transition">
+              <input type="radio" name="photo-tier" value="97" class="text-cyan-500">
+              <div class="flex-1">
+                <p class="font-semibold">Pro</p>
+                <p class="text-gray-500 text-sm">+ 3 Python scripts + Video walkthrough</p>
+              </div>
+              <span class="font-bold">$97</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 bg-gray-900 rounded-lg cursor-pointer hover:bg-gray-800 transition">
+              <input type="radio" name="photo-tier" value="197" class="text-cyan-500">
+              <div class="flex-1">
+                <p class="font-semibold">Studio</p>
+                <p class="text-gray-500 text-sm">+ 1-on-1 setup call + Custom prompts</p>
+              </div>
+              <span class="font-bold">$197</span>
+            </label>
           </div>
-          <a href="https://gumroad.com/l/studio535-bundle" class="px-4 py-2 bg-cyan-500 text-black font-semibold rounded-lg hover:bg-cyan-400 transition">Buy Bundle</a>
+          
+          <div class="flex gap-3">
+            <button onclick="buyProduct('photo', getSelectedTier('photo-tier'))" class="flex-1 px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded-lg transition">Buy with Stripe</button>
+            <a href="https://gumroad.com/l/ai-photo-playbook" class="px-6 py-3 glass hover:bg-white/10 rounded-lg transition text-center">Gumroad</a>
+          </div>
         </div>
       </div>
-    </div>
 
+      <!-- Product 2: AI Automation Kit -->
+      <div class="glass rounded-2xl overflow-hidden">
+        <div class="h-48 bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center">
+          <span class="text-6xl">⚡</span>
+        </div>
+        <div class="p-6">
+          <p class="text-cyan-400 text-sm mb-2">AUTOMATION</p>
+          <h3 class="text-2xl font-bold mb-2">Maker Business AI Automation Kit</h3>
+          <p class="text-gray-400 text-sm mb-4">7 databases, 7 n8n workflows, 8 core prompts. Automate your entire maker business.</p>
+          
+          <div class="space-y-3 mb-6">
+            <label class="flex items-center gap-3 p-3 bg-gray-900 rounded-lg cursor-pointer hover:bg-gray-800 transition">
+              <input type="radio" name="automation-tier" value="37" class="text-cyan-500" checked>
+              <div class="flex-1">
+                <p class="font-semibold">Starter</p>
+                <p class="text-gray-500 text-sm">Core templates + guides</p>
+              </div>
+              <span class="font-bold">$37</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 bg-gray-900 rounded-lg cursor-pointer hover:bg-gray-800 transition">
+              <input type="radio" name="automation-tier" value="67" class="text-cyan-500">
+              <div class="flex-1">
+                <p class="font-semibold">Pro</p>
+                <p class="text-gray-500 text-sm">+ n8n workflows + Scripts</p>
+              </div>
+              <span class="font-bold">$67</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 bg-gray-900 rounded-lg cursor-pointer hover:bg-gray-800 transition">
+              <input type="radio" name="automation-tier" value="147" class="text-cyan-500">
+              <div class="flex-1">
+                <p class="font-semibold">Studio</p>
+                <p class="text-gray-500 text-sm">+ Setup call + Custom automation</p>
+              </div>
+              <span class="font-bold">$147</span>
+            </label>
+          </div>
+          
+          <div class="flex gap-3">
+            <button onclick="buyProduct('automation', getSelectedTier('automation-tier'))" class="flex-1 px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded-lg transition">Buy with Stripe</button>
+            <a href="https://gumroad.com/l/maker-ai-automation" class="px-6 py-3 glass hover:bg-white/10 rounded-lg transition text-center">Gumroad</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3: Notion OS -->
+      <div class="glass rounded-2xl overflow-hidden">
+        <div class="h-48 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 flex items-center justify-center">
+          <span class="text-6xl">📋</span>
+        </div>
+        <div class="p-6">
+          <p class="text-cyan-400 text-sm mb-2">NOTION TEMPLATE</p>
+          <h3 class="text-2xl font-bold mb-2">Maker Business Notion OS</h3>
+          <p class="text-gray-400 text-sm mb-4">12 databases, 4 hubs, formulas, automations. Complete business management in Notion.</p>
+          
+          <div class="space-y-3 mb-6">
+            <label class="flex items-center gap-3 p-3 bg-gray-900 rounded-lg cursor-pointer hover:bg-gray-800 transition">
+              <input type="radio" name="notion-tier" value="27" class="text-cyan-500" checked>
+              <div class="flex-1">
+                <p class="font-semibold">Standard</p>
+                <p class="text-gray-500 text-sm">Core template + PDF guide</p>
+              </div>
+              <span class="font-bold">$27</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 bg-gray-900 rounded-lg cursor-pointer hover:bg-gray-800 transition">
+              <input type="radio" name="notion-tier" value="47" class="text-cyan-500">
+              <div class="flex-1">
+                <p class="font-semibold">Pro</p>
+                <p class="text-gray-500 text-sm">+ 7 bonus templates + Automations</p>
+              </div>
+              <span class="font-bold">$47</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 bg-gray-900 rounded-lg cursor-pointer hover:bg-gray-800 transition">
+              <input type="radio" name="notion-tier" value="97" class="text-cyan-500">
+              <div class="flex-1">
+                <p class="font-semibold">Studio</p>
+                <p class="text-gray-500 text-sm">+ Team license + Setup call</p>
+              </div>
+              <span class="font-bold">$97</span>
+            </label>
+          </div>
+          
+          <div class="flex gap-3">
+            <button onclick="buyProduct('notion', getSelectedTier('notion-tier'))" class="flex-1 px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded-lg transition">Buy with Stripe</button>
+            <a href="https://gumroad.com/l/maker-notion-os" class="px-6 py-3 glass hover:bg-white/10 rounded-lg transition text-center">Gumroad</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4: Prompt Engineering -->
+      <div class="glass rounded-2xl overflow-hidden">
+        <div class="h-48 bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center">
+          <span class="text-6xl">🧠</span>
+        </div>
+        <div class="p-6">
+          <p class="text-cyan-400 text-sm mb-2">PROMPTS</p>
+          <h3 class="text-2xl font-bold mb-2">AI Prompt Engineering for Makers</h3>
+          <p class="text-gray-400 text-sm mb-4">434 prompts, 5 categories, 47-page guide, Notion workspace. Master AI for your maker business.</p>
+          
+          <div class="p-4 bg-gray-900 rounded-lg mb-6">
+            <div class="flex justify-between items-center">
+              <div>
+                <p class="font-semibold">Complete Package</p>
+                <p class="text-gray-500 text-sm">PDF + CSV + JSON + Notion template</p>
+              </div>
+              <span class="text-2xl font-bold">$19.99</span>
+            </div>
+          </div>
+          
+          <div class="flex gap-3">
+            <button onclick="buyProduct('prompts', 19.99)" class="flex-1 px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded-lg transition">Buy with Stripe</button>
+            <a href="https://gumroad.com/l/ai-prompt-makers" class="px-6 py-3 glass hover:bg-white/10 rounded-lg transition text-center">Gumroad</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="py-24 px-6 text-center">
-  <h2 class="text-3xl font-bold mb-6">Need something custom?</h2>
-  <p class="text-gray-400 mb-8 max-w-xl mx-auto">We build custom AI systems for businesses. From prompt libraries to full automation stacks.</p>
-  <a href="/#contact" class="px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded-lg transition inline-block">Book a Call</a>
+<!-- Guarantee -->
+<section class="py-16 px-6">
+  <div class="max-w-3xl mx-auto text-center glass rounded-2xl p-8">
+    <div class="text-4xl mb-4">🛡️</div>
+    <h3 class="text-2xl font-bold mb-4">30-Day Money-Back Guarantee</h3>
+    <p class="text-gray-400">If any product doesn't save you time or make you money, email me for a full refund. No questions asked.</p>
+  </div>
 </section>
 
 <!-- Footer -->
 <footer class="py-12 px-6 border-t border-gray-800 text-center text-gray-600 text-sm">
   <p>Studio 535 · AI Consulting & Digital Products · est. 2026</p>
 </footer>
+
+<!-- Stripe Integration Script -->
+<script>
+// Initialize Stripe (replace with your publishable key)
+const stripe = Stripe('pk_live_XXXXXXXXXXXXXXXXXXXXXXXX');
+
+// Product price IDs (create these in Stripe Dashboard)
+const PRICE_IDS = {
+  photo: { 27: 'price_xxx', 97: 'price_xxx', 197: 'price_xxx' },
+  automation: { 37: 'price_xxx', 67: 'price_xxx', 147: 'price_xxx' },
+  notion: { 27: 'price_xxx', 47: 'price_xxx', 97: 'price_xxx' },
+  prompts: { 19.99: 'price_xxx' },
+  bundle: { 111: 'price_xxx' }
+};
+
+function getSelectedTier(name) {
+  const selected = document.querySelector(`input[name="${name}"]:checked`);
+  return selected ? parseFloat(selected.value) : null;
+}
+
+async function buyProduct(product, tier) {
+  const priceId = PRICE_IDS[product]?.[tier];
+  if (!priceId) {
+    alert('Product configuration error. Please contact support.');
+    return;
+  }
+  
+  try {
+    const { error } = await stripe.redirectToCheckout({
+      lineItems: [{ price: priceId, quantity: 1 }],
+      mode: 'payment',
+      successUrl: window.location.origin + '/success.html?product=' + product,
+      cancelUrl: window.location.origin + '/products.html',
+    });
+    
+    if (error) {
+      console.error('Stripe error:', error);
+      alert('Payment failed: ' + error.message);
+    }
+  } catch (err) {
+    console.error('Error:', err);
+    alert('Something went wrong. Please try again.');
+  }
+}
+
+async function buyBundle() {
+  await buyProduct('bundle', 111);
+}
+
+// Analytics tracking
+function trackPurchase(product, tier) {
+  gtag('event', 'begin_checkout', {
+    currency: 'USD',
+    value: tier,
+    items: [{ item_name: product, price: tier }]
+  });
+}
+</script>
 
 </body>
 </html>

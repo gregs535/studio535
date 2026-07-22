@@ -5,12 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Consulting for Small Business | Studio 535</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 <style>
   .gradient-text { background: linear-gradient(90deg, #00d4ff, #7c3aed); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
 </style>
 </head>
 <body class="bg-gray-950 text-white font-sans antialiased">
+
+<!-- Nav -->
+<nav class="fixed top-0 w-full bg-gray-950/80 backdrop-blur-md border-b border-gray-800 z-50">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="/" class="text-xl font-bold">Studio 535</a>
+    <div class="flex gap-6">
+      <a href="/" class="text-cyan-400">Home</a>
+      <a href="/products.html" class="text-gray-400 hover:text-white transition">Products</a>
+      <a href="/case-studies.html" class="text-gray-400 hover:text-white transition">Case Studies</a>
+      <a href="/blog.html" class="text-gray-400 hover:text-white transition">Blog</a>
+      <a href="/about.html" class="text-gray-400 hover:text-white transition">About</a>
+    </div>
+  </div>
+</nav>
+<div class="pt-16"></div>
 
 <!-- Hero -->
 <section class="min-h-screen flex items-center justify-center px-6 text-center">
