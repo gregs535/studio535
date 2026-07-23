@@ -288,8 +288,8 @@ async function buyProduct(product, tier) {
     const { error } = await stripe.redirectToCheckout({
       lineItems: [{ price: priceId, quantity: 1 }],
       mode: 'payment',
-      successUrl: window.location.origin + '/success.html?product=' + product,
-      cancelUrl: window.location.origin + '/products.html',
+      successUrl: window.location.origin + '/studio535-ai/success.html?product=' + product,
+      cancelUrl: window.location.origin + '/studio535-ai/products.html',
     });
     
     if (error) {
